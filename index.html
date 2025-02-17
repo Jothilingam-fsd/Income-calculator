@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income Expense Calculator</title>
+    <link href="style.css" rel="stylesheet">
+    <!-- Add Tailwind CSS if using -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto p-6">
+        <header class="text-center mb-6">
+            <h1 class="text-3xl font-bold">Income Expense Calculator</h1>
+        </header>
+
+        <section class="mb-6">
+            <div class="flex justify-between mb-4">
+                <input type="text" id="description" placeholder="Description" class="border p-2 flex-1" />
+                <input type="number" id="amount" placeholder="Amount" class="border p-2 ml-2 w-1/4" />
+                <select id="type" class="border p-2 ml-2 w-1/4">
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                <button id="addButton" class="bg-blue-500 text-white p-2 ml-2">Add</button>
+            </div>
+
+            <!-- Radio buttons for filtering -->
+            <div class="flex justify-center mb-4">
+                <label class="mr-4">
+                    <input type="radio" name="filter" value="all" checked> All
+                </label>
+                <label class="mr-4">
+                    <input type="radio" name="filter" value="income"> Income
+                </label>
+                <label class="mr-4">
+                    <input type="radio" name="filter" value="expense"> Expense
+                </label>
+            </div>
+        </section>
+
+        <!-- Entries List -->
+        <section id="entriesList" class="mb-6">
+            <ul id="entries"></ul>
+        </section>
+
+        <!-- Financial Overview -->
+        <section id="overview" class="text-center">
+            <p id="totalIncome">Total Income: $0</p>
+            <p id="totalExpenses">Total Expenses: $0</p>
+            <p id="netBalance">Net Balance: $0</p>
+        </section>
+
+        <!-- Reset Button -->
+        <div class="text-center mt-4">
+            <button id="resetButton" class="bg-red-500 text-white p-2">Reset</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
